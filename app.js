@@ -1,6 +1,15 @@
-
 var express = require('express');
 var app = express();
+
+process.on('uncaughtException', function(err) {
+    if(err.errno === 'EADDRINUSE'){
+         console.log(err);
+         }
+    else{
+         console.log(err);
+         }
+    process.exit(1);
+});
 
 app.configure(function(){
   app.use("/scripts", express.static(__dirname + '/scripts'));
@@ -11,4 +20,5 @@ app.configure(function(){
     res.sendfile(__dirname + '/index.html')
  });
 
-app.listen(process.env.PORT, process.env.IP);
+app.listen(4000);
+
