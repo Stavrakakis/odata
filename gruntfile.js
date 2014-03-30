@@ -1,5 +1,7 @@
 module.exports = function(grunt) {
 
+    var sourceFiles = ['*.js', 'scripts/*.js', 'tests/*.js'];
+
     // Project configuration.
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
@@ -14,11 +16,11 @@ module.exports = function(grunt) {
                 },
             },
             files: {
-                src: ['*.js', 'scripts/*.js']
+                src: sourceFiles
             }
         },
         "jsbeautifier": {
-            files: ["*.js", 'scripts/*.js'],
+            files: sourceFiles,
             options: {
                 html: {
                     braceStyle: "collapse",

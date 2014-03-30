@@ -7,6 +7,7 @@
     "express": "v3.x",
     "grunt": "v0.4.x",
     "grunt-contrib-jshint": "v0.9.x",
-    "grunt-jsbeautifier": "v0.2.x"
+    "grunt-jsbeautifier": "v0.2.x",
+    "qunitjs": "v1.14.x"
   }
 }
