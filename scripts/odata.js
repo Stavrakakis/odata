@@ -1,4 +1,3 @@
-
 $(document).ready(function() {
 
     OData.defaultHttpClient.enableJsonpCallback = true;

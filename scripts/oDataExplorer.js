@@ -1,6 +1,6 @@
-var oDataExplorer = (function () {
-	var module = {};
-        
+var oDataExplorer = (function() {
+    var module = {};
+
     module.getPropertyNames = function(dataset) {
         var columns = Object.getOwnPropertyNames(dataset[0]);
         var index = columns.indexOf("__metadata");
@@ -10,7 +10,7 @@ var oDataExplorer = (function () {
         }
         return columns;
     };
-    
+
     module.drawTable = function(columns, data, element) {
         var table = d3.select(element);
 
@@ -42,6 +42,6 @@ var oDataExplorer = (function () {
 
         $(element).dataTable();
     };
-    
-	return module;
+
+    return module;
 }());

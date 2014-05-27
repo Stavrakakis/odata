@@ -58,11 +58,21 @@ module.exports = function(grunt) {
             }
         },
         stylus: {
-            files: {
-              'styles/site.css': ['styles/*.styl']
+            build: {
+                options: {
+                    linenos: true,
+                    compress: false
+                },
+                files: [{
+                    expand: true,
+                    cwd: 'styles',
+                    src: ['**/*.styl'],
+                    dest: 'styles',
+                    ext: '.css'
+                }]
             }
-          }
-        }
+        },
+
     });
 
     // Load the plugin that provides the "uglify" task.
@@ -70,6 +80,6 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-jsbeautifier');
     grunt.loadNpmTasks('grunt-contrib-stylus');
     // Default task(s).
-    grunt.registerTask('default', ['jshint', 'jsbeautifier']);
+    grunt.registerTask('default', ['jshint', 'jsbeautifier', 'stylus']);
 
 };
